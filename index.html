@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Imperial Academy</title>
+    <title>IAU Portal</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- top nav bar -->
     <nav>
         <div class="logo">
             <img src="img/imperial-logo.png" alt="The imperial logo" id="imperial-logo">
@@ -37,6 +38,7 @@
         <h1>The Imperial Academy University</h1>
     </header>
     <main>
+        <!-- search bar -->
         <div class="search-container">
             <input type="search" name="" id="search-bar" placeholder="Search by StudentName">
             <svg width="30" height="30" viewBox="0 0 190 193" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,6 +50,7 @@
             </svg>
         </div>
         <div class="table-container">
+            <!-- table generated from JS -->
             <table>
             </table>
         </div>
@@ -55,10 +58,12 @@
     <footer>
         <p>&copy;Copyright 2020 Imperial Academy University</p>
     </footer>
+    <!-- JSON data sets -->
     <script src="js/data-school.js"></script>
     <script src="js/data-library.js"></script>
     <script src="js/data-restaurant.js"></script>
     <script src="js/data-weather.js"></script>
+    <!-- Controller js file -->
     <script src="js/scripts.js"></script>
 </body>
 

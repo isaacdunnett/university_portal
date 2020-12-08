@@ -1,8 +1,10 @@
+// get JSON data from js files
 var schoolData = JSON.parse(jsonDataSchool);
 var libraryData = JSON.parse(jsonDataLibrary);
 var restaurantData = JSON.parse(jsonDataRestaurant);
 var weatherData = JSON.parse(jsonDataWeather);
 
+// get html elements
 var table = document.querySelector("table");
 var search = document.getElementById("search-bar");
 var header = document.querySelector("header>h1");
@@ -13,8 +15,10 @@ var libraryBtn = document.getElementById("library-btn");
 var foodBtn = document.getElementById("food-btn");
 var weatherBtn = document.getElementById("weather-btn");
 
+// variable to keep track of what category we are currently on
 var currentView = "student";
 
+// generates a table in <table></table> with provided array of JSON data
 function createTable(jsonData) {
     table.innerHTML = "";
     let thead = "<thead><tr>";
@@ -34,6 +38,7 @@ function createTable(jsonData) {
     }
 }
 
+// create proper table and change proper styling on button clicks
 studentsBtn.addEventListener("click", function () {
     currentView = "student";
     search.placeholder = "Search by StudentName";
@@ -78,11 +83,15 @@ weatherBtn.addEventListener("click", function () {
     studentsBtn.classList.remove("active-btn");
     createTable(weatherData);
 });
+
+// create initial table
 createTable(schoolData);
 
+// filter table data on input of search box based on current category selected
 search.addEventListener("input", function (e) {
     if (currentView == "student") {
         let newData = [];
+        // add rows that match search input from left to right first
         for (let i = 0; i < schoolData.length; i++) {
             let studentName = schoolData[i].StudentName.toLowerCase();
             let input = e.target.value.toLowerCase();
@@ -90,6 +99,7 @@ search.addEventListener("input", function (e) {
                 newData.push(schoolData[i]);
             }
         }
+        // then add rows that contains search input
         for (let i = 0; i < schoolData.length; i++) {
             let studentName = schoolData[i].StudentName.toLowerCase();
             let input = e.target.value.toLowerCase();
@@ -101,6 +111,7 @@ search.addEventListener("input", function (e) {
     }
     else if (currentView == "library") {
         let newData = [];
+        // add rows that match search input from left to right first
         for (let i = 0; i < libraryData.length; i++) {
             let bookName = libraryData[i].BookName.toLowerCase();
             let input = e.target.value.toLowerCase();
@@ -108,6 +119,7 @@ search.addEventListener("input", function (e) {
                 newData.push(libraryData[i]);
             }
         }
+        // then add rows that contains search input
         for (let i = 0; i < libraryData.length; i++) {
             let bookName = libraryData[i].BookName.toLowerCase();
             let input = e.target.value.toLowerCase();
@@ -119,6 +131,7 @@ search.addEventListener("input", function (e) {
     }
     else if (currentView == "restaurant") {
         let newData = [];
+        // add rows that match search input from left to right first
         for (let i = 0; i < restaurantData.length; i++) {
             let dishName = restaurantData[i].DishName.toLowerCase();
             let input = e.target.value.toLowerCase();
@@ -126,6 +139,7 @@ search.addEventListener("input", function (e) {
                 newData.push(restaurantData[i]);
             }
         }
+        // then add rows that contains search input
         for (let i = 0; i < restaurantData.length; i++) {
             let dishName = restaurantData[i].DishName.toLowerCase();
             let input = e.target.value.toLowerCase();
@@ -137,6 +151,7 @@ search.addEventListener("input", function (e) {
     }
     else {
         let newData = [];
+        // add rows that match search input from left to right first
         for (let i = 0; i < weatherData.length; i++) {
             let cityName = weatherData[i].CityName.toLowerCase();
             let input = e.target.value.toLowerCase();
@@ -144,6 +159,7 @@ search.addEventListener("input", function (e) {
                 newData.push(weatherData[i]);
             }
         }
+        // then add rows that contains search input
         for (let i = 0; i < weatherData.length; i++) {
             let cityName = weatherData[i].CityName.toLowerCase();
             let input = e.target.value.toLowerCase();
@@ -155,6 +171,7 @@ search.addEventListener("input", function (e) {
     }
 });
 
+// change styling of search container on search bar focus/blur
 search.addEventListener("focus", function () {
     searchContainer.style.backgroundColor = "white";
     searchContainer.style.transform = "translateX(1em)";
