@@ -5,8 +5,9 @@ body {
     min-height: 100vh;
     max-width: 100vw;
     font-family: 'Roboto', sans-serif;
-    /* overflow-x: hidden; */
 }
+
+/* top nav bar styles */
 
 nav {
     display: flex;
@@ -51,6 +52,8 @@ nav {
     list-style: none;
 }
 
+/* top category buttons styles */
+
 .nav-btns button {
     color: #E50918;
     text-transform: uppercase;
@@ -76,6 +79,8 @@ nav {
     box-shadow: #E50918 0px 15px 15px -10px;
 }
 
+/* style for button when the table pertains to its category (gets set by js) */
+
 .active-btn {
     transform: translateY(-3px);
     background-color: white !important;
@@ -84,6 +89,8 @@ nav {
     border-color: white !important;
     box-shadow: #E50918 0px 15px 15px -10px;
 }
+
+/* header styles */
 
 header {
     display: flex;
@@ -96,6 +103,8 @@ header>h1 {
     font-size: 2em;
 }
 
+/* main container styles */
+
 main {
     display: flex;
     flex-direction: column;
@@ -103,12 +112,16 @@ main {
     align-items: center;
 }
 
+/* table cells styles */
+
 main td {
     border: 1px solid #000000;
     margin: 0;
     font-weight: 300;
     padding: .5em;
 }
+
+/* search container base styles (they get slightly changed by js on search bar focus/blur) */
 
 .search-container {
     display: flex;
@@ -148,6 +161,8 @@ main td {
     stroke: #E50918 !important;
 }
 
+/* footer styles */
+
 footer {
     width: 100%;
     background-color: #E50918;
@@ -160,6 +175,8 @@ footer {
     font-weight: 100;
     margin-top: 2em;
 }
+
+/* mobile view */
 
 @media (max-width: 840px) {
     nav {
